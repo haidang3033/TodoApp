@@ -1,0 +1,323 @@
+@import './mutual.scss';
+
+.body {
+    overflow-y: scroll;
+    .introduction { 
+        margin-bottom: 5rem;
+        &__header {
+            @include flex(row, space-between, center, none);
+            width: 100%;
+            margin-bottom: 4rem;
+            .content {
+                @include flex(column, none, none, none);
+                width: calc(50% - 1rem);
+                .text {
+                    color: $text-color;
+                    margin-bottom: 3rem;
+                    h3 {
+                        font-weight: 600;
+                        font-size: 4rem;
+                        margin-bottom: 1.5rem;
+                        line-height: 5rem;
+                    }
+                    span {
+                        color: $primary-color;
+                    }
+                    p {
+                        font-weight: 400;
+                        line-height: 2.5rem;
+                        font-size: 1.6rem;
+                        opacity: 0.7;
+                    }
+                }
+                .buttons {
+                    @include flex(row, space-between, center, none);
+                    width: 70%;
+                    a {
+                        text-align: center;
+                        text-decoration: none;
+                        width: calc(50% - 1rem);
+                        padding: 1.2rem;
+                    }
+                    .tutor {
+                        color: $text-color;
+                        border: none;
+                    }
+                    .start {
+                        color: $text-color;
+                        border: none;
+                    }
+                }
+            }
+            .thumb {
+                width: calc(50% - 1rem);
+                text-align: center;
+                img {
+                    border-radius: 2rem;
+                    width: 100%;
+                }
+            }
+        }
+        &__text {
+            color: $text-color;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        &__slider {
+            position: relative;
+            height: 30rem;
+            width: 100%;
+            border-radius: 1.5rem;
+            border: $text-color solid 2px;
+            .slider-wrapper {
+                border-radius: 1.5rem;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                .image {
+                    display: flex;
+                    position: relative;
+                    transition: all ease 1s;
+                    .image__item {
+                        flex: 1 0 100%;
+                        img {
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+            .buttons {
+                @include flex(row, space-between, center, none);
+                width: calc(100% + 3.4rem);
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: -1.7rem;
+                button {
+                    @include flex(row, center, center, none);
+                    border-radius: 50%;
+                    width: 3rem;
+                    height: 3rem;
+                    font-size: 2rem;
+                    border: none;
+                    cursor: pointer;
+                    color: $secondary-color;
+                    transition: all ease 0.3s;
+                    opacity: 0.8;
+                }
+                button:hover {
+                    opacity: 1;
+                }
+                button:active {
+                    transform: scale(1.1);
+                }
+            }
+            .slider-nav {
+                margin-top: 1.5rem;
+                position: absolute;
+                width: 100%;
+                @include flex(row, center, center, none);
+                .nav-wrapper {
+                    width: 30%;
+                    @include flex(row, space-between, center, none);
+                    .bar {
+                        cursor: pointer;
+                        border-radius: 3rem;
+                        height: 2rem;
+                        width: calc(25% - 0.7rem);
+                        background-color: #363742;
+                        transition: all ease 0.3s;
+                    }
+                    .bar.active {
+                        background-color: $text-color;
+                        opacity: 0.5;    
+                    }
+                    .bar:not(.active):hover {
+                        background-color: rgba($color: $text-color, $alpha: 0.2);   
+                    }
+                }
+            }
+        }
+    }
+    .tutorial {
+        padding-top: 2rem;
+        margin-bottom: 5rem;
+        &__heading {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: $text-color;
+        }
+        &__item {
+            @include flex(row, space-between, stretch, none);
+            margin-bottom: 3rem;
+            .content {
+                @include flex(column, none, none, none);
+                width: calc(40% - 1.5rem);
+                position: relative;
+                background-color: #363742;
+                border-radius: 2rem;
+                padding: 2rem;
+                height: 40rem;
+                h3 {
+                    font-size: 3rem;
+                    margin-bottom: 2rem;
+                }
+                p {
+                    line-height: 2rem;
+                    font-size: 1.7rem;
+                    margin-bottom: 1rem;
+                    color: $text-color;
+                }
+                ul {
+                    color: $text-color;
+                    li {
+                        font-size: 1.6rem;
+                        margin-left: 5rem;
+                        margin-bottom: 0.5rem;
+                        line-height: 2rem;
+                        i {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+                a {
+                    @include flex(row, center, center, none);
+                    text-decoration: none;
+                    position: absolute;
+                    bottom: 2rem;
+                    height: 5rem;
+                    width: 30%;
+                    color: $text-color;
+                    border: none;
+                    margin-bottom: 0.5rem;
+                    i {
+                        margin-left: 0.5rem;
+                    }
+                }
+                .timetable-btn {
+                    @include flex(row, space-evenly, stretch, none);
+                    height: 4rem;
+                    width: 10rem;
+                }
+                .todo-btn {
+                    @include flex(row, space-evenly, stretch, none);
+                    height: 4rem;
+                    width: 10rem;
+                }
+                .timer-btn {
+                    @include flex(row, space-evenly, stretch, none);
+                    height: 4rem;
+                    width: 10rem;
+                }
+            }
+            .image {
+                width: calc(60% - 1.5rem);
+                img {
+                    border-radius: 2rem;
+                    height: 40rem;
+                    width: 100%;
+                }
+            }
+        }
+        &__item:nth-child(2) {
+            .content {
+                .inner {
+                    color: $sub-color-4;
+                }
+            }
+        }
+        &__item:nth-child(3) {
+            .content {
+                .inner {
+                    color: $primary-color;
+                }
+            }
+        }
+        &__item:nth-child(4) {
+            .content {
+                .inner {
+                    color: $sub-color-3;
+                }
+            }
+        }
+        &__item:nth-child(odd) {
+            flex-direction: row;
+        }
+        &__item:nth-child(even) {
+            flex-direction: row-reverse;
+            .content {
+                a {
+                    right: 2rem;
+                }
+            }
+        }
+        &__video {
+            h3 {
+                color: $text-color;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            .video-zone {
+                text-align: center;
+            }
+        }
+    }
+    .footer {
+        .footer__heading {
+            font-size: 2rem;
+            color: $text-color;
+            margin-bottom: 3rem;
+        }
+        .cards-container {
+            @include flex(row, space-evenly, center, none);
+            margin-bottom: 7rem;
+            .card {
+                @include flex(column, none, center, none);
+                border: transparent solid 2px;
+                border-radius: 2rem;
+                padding: 2rem 1.5rem;
+                width: calc(33.33333% - 10rem);
+                background-color: #363742;
+                color: $text-color;
+                cursor: pointer;
+                transition: all ease 0.3s;
+                opacity: 0.7;
+                text-decoration: none;
+                &__heading {
+                    text-align: center;
+                    font-size: 1.7rem;
+                    margin-bottom: 1.5rem;
+                    color: $text-color;
+                    transition: all ease 0.3s;
+                }
+                &__images {
+                    padding: 0 2rem;
+                    width: 100%;
+                    margin-bottom: 3rem;
+                    img {
+                        border-radius: 2rem;
+                        width: 100%;
+                    }
+                }
+            }
+            .card:hover {
+                border: $primary-color solid 2px;
+                opacity: 1;
+                .card__heading {
+                    color: $primary-color;
+                }
+            }
+        }
+        .end {
+            opacity: 0.7;
+            font-size: 1.6rem;
+            color: $text-color;
+            text-align: center;
+            transition: all ease 0.3s;
+        }
+        .end:hover {
+            opacity: 1;
+        }
+    }
+}

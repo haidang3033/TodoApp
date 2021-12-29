@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/todo.css">
+    <link rel="shortcut icon" type="image/jpg" href="/img/pic-logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Todo App | List</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__head">
+            <img src="/img/pic-logo.png" alt="" class="logo">
+            <p class="header__title">Your todo list</p>
+        </div>
+        <div class="header__body"></div>
+        <div class="header__foot">
+            <div class="count-noti"></div>
+            <i class="far fa-bell normal-icon"></i>
+            <i class="fas fa-bell special-icon"></i>
+            <div class="notification-container">
+                <div class="title">
+                    <p>Notifications</p>
+                    <button><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <div class="noti-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="/index.html" class="nav-item" data-set="0">
+            <i class="far fa-user normal-icon"></i>
+            <i class="fas fa-user special-icon"></i>
+        </a>
+        <a href="/html/timeTable.html" class="nav-item" data-set="1">
+            <i class="far fa-calendar normal-icon"></i>
+            <i class="fas fa-calendar special-icon"></i>
+        </a>
+        <a href="#" class="nav-item active" data-set="2">
+            <i class="far fa-list-alt normal-icon"></i>
+            <i class="fas fa-list-alt special-icon"></i>
+        </a>
+        <a href="/html/timer.html" class="nav-item" data-set="3">
+            <i class="far fa-clock normal-icon"></i>
+            <i class="fas fa-clock special-icon"></i>
+        </a>
+        <a href="/html/setting.html" class="nav-item" data-set="4">
+            <i class="far fa-user-circle normal-icon"></i>
+            <i class="fas fa-user-circle special-icon"></i>
+        </a>
+        <a href="/html/about.html" class="nav-item" data-set="5">
+            <i class="far fa-address-book normal-icon"></i>
+            <i class="fas fa-address-book special-icon"></i>
+        </a>
+    </div>
+    <div class="body">
+        <div class="todo-group">
+            <div class="todo-group__header">Categories</div>
+            <div class="todo-view"></div>
+            <div class="todo-button">
+                <button class="todo-remove-all btn btn-remove">Remove all</button>
+                <button class="todo-add btn btn-add-edit">Create group</button>
+            </div>
+        </div>  
+        <div class="todo-list">
+            <div class="todo-list__header">"Heading"</div>
+            <p class="todo-list__subheader">"Numbers of pending tasks"</p>
+            <ul class="todo-list__nav disabled">
+                <li class="nav-item active" data-index="0">
+                    <i class="far fa-minus-square normal-icon"></i>
+                    <i class="fas fa-minus-square special-icon"></i>
+                    Pending
+                </li>
+                <li class="nav-item" data-index="1">
+                    <i class="far fa-check-square normal-icon"></i>
+                    <i class="fas fa-check-square special-icon"></i>
+                    Resolved
+                </li>
+                <li class="nav-item" data-index="2">
+                    <i class="far fa-calendar-times normal-icon"></i>
+                    <i class="fas fa-calendar-times special-icon"></i>
+                    Failed
+                </li>
+                <div class="bottom-line"></div>
+            </ul>
+            <div class="works-list"></div>  
+            <div class="todo-button">
+                <button class="todo-remove-all btn btn-remove">Remove all</button>
+                <button class="todo-add btn btn-add-edit">Add task</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-box"></div>
+    <div class="sub-modal-box"></div>
+    <script type="module" src="/js/todo.js"></script>
+</body>
+</html>

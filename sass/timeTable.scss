@@ -1,0 +1,372 @@
+@import './mutual.scss';
+
+.body {
+    overflow-y: scroll;
+    .title {
+        @include flex(row, space-between, center, none);
+        width: 100%;
+        margin-bottom: 3rem;
+        .date {
+            @include flex(row, space-between, center, none);
+            color: $text-color;
+            font-size: 2rem;
+        }
+        .buttons {
+            @include flex(row, center, center, none);
+            button {
+                border-radius: 0.5rem;
+                padding: 0.2rem;
+                width: 8rem;
+                height: 4rem;
+                font-size: 1.7rem;
+                border: none;
+                color: $text-color;
+            }
+            .note {
+                margin-right: 1.2rem;
+                i {
+                    transition: all ease 0.3s;
+                }
+            }
+            .note.turn-around {
+                i {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+    .schedule {
+        color: $text-color;
+        width: 100%;
+        transition: all ease 0.3s;
+        .row {
+            @include flex(row, space-between, center, none);
+            .column {
+                cursor: pointer;
+                width: calc(14.2% - 1rem);
+                padding: 1.5rem;
+                font-size: 1.7rem;
+                background-color: #363742;
+                margin-bottom: 1.5rem;
+                border-radius: 0.5rem;
+                transition: all ease 0.3s;
+                h3 {
+                    font-weight: 600;
+                    margin-bottom: 2rem;
+                    font-size: 2rem;
+                    height: 2rem;
+                }
+                p {
+                    height: 1.7rem;
+                }
+            }
+            .column:hover {
+                background-color: #30313a;
+            }
+            .column.current {
+                background-color: $primary-color;
+                opacity: 1;
+                font-weight: 600;
+            }
+            .column.current:hover {
+                background-color: #877ac5;
+            }
+            .column.active {
+                background-color: $sub-color-3;
+                opacity: 1;
+                font-weight: 600;
+            }
+            .column.active:hover {
+                background-color: #a85218;
+            }
+            .column.event-today {
+                background-color: $sub-color-4;
+                opacity: 1;
+                font-weight: 600;
+            }
+            .column.event-today:hover {
+                background-color: #40ad6c;
+            }
+            .column.empty {
+                user-select: none;
+                cursor: auto;
+                color: transparent;
+            } 
+        }
+        .head {
+            background-color: #363742;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            .column {
+                cursor: auto;
+                border-radius: 0;
+                background-color: transparent;
+                opacity: 1;
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .column:hover {
+                background-color: transparent;
+            }
+        }
+        &.show-bot-modal {
+            margin-bottom: 20rem;
+        }
+    }
+    .modal-box {
+        .modal {
+            @include flex(row, center, center, none);
+            position: fixed;
+            background-color: rgba($color: #000, $alpha: 0.7);
+            top: 6rem;
+            right: 0;
+            bottom: 0;
+            left: 6.7rem;
+            animation: fadeIn ease 0.3s;
+            .container {
+                @include flex(column, space-between, none, none);
+                background-color: $secondary-color;
+                height: 50rem;
+                width: 51rem;
+                padding: 1.5rem 2rem;
+                border-radius: 0.5rem;
+                animation: entrance ease 0.3s;
+                .heading {
+                    @include flex(row, space-between, center, none);
+                    margin-bottom: 1rem;
+                    .text {
+                        color: $text-color;
+                        font-size: 1.7rem;
+                        @include flex(row, none, center, none);
+                        img {
+                            width: 7rem;
+                            margin-right: 2rem;
+                        }
+                        div {
+                            h3 {
+                                margin-bottom: 0.5rem;
+                            }
+                            span {
+                                opacity: 0.8;
+                                font-size: 1.5rem
+                            }
+                        }
+                    }
+                    .close {
+                        @include flex(row, center, center, none);
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        font-weight: 600;
+                        color: $text-color;
+                        border: none;
+                        padding: 0;
+                    }
+                }
+                .task-image {
+                    @include flex(row, center, center, none);
+                    img {
+                        width: 90%;
+                    }
+                }
+                .task-list {
+                    height: 75%;
+                    overflow-y: scroll;
+                    .no-item {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border: $text-color dashed 2px;
+                        padding: 4rem;
+                        p {
+                            color: $text-color;
+                            font-size: 1.7rem;
+                            margin-bottom: 2rem;
+                        }
+                        img {
+                            height: 15rem;
+                        }
+                    }
+                    .item {
+                        @include flex(row, space-between, center, none);
+                        cursor: pointer;
+                        background-color: #363742;
+                        padding: 1.5rem;
+                        border-radius: 0.5rem;
+                        margin-bottom: 1rem;
+                        color: $text-color;
+                        font-size: 1.7rem;
+                        opacity: 0.7;
+                        transition: all ease 0.3s;
+                        .name {
+                            width: calc(100% - 10rem);
+                            height: 1.9rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            word-wrap: none;
+                        }
+                    }
+                    .item:hover {
+                        opacity: 1;
+                    }
+                    .item.active {
+                        opacity: 1;
+                        background-color: $primary-color;
+                    }
+                    .item.active:hover {
+                        background-color: #877ac5;
+                    }
+                }
+                .task-edit {
+                    @include flex(row, space-between, center, none);
+                    height: 25%;
+                    input {
+                        background-color: transparent;
+                        font-size: 1.7rem;
+                        outline: none;
+                        border: none;
+                        border-bottom: $sub-color-3 solid 2px;
+                        color: $sub-color-3;
+                        padding: 0.5rem 0;
+                    }
+                    input:first-child {
+                        width: calc(50% - 1rem);
+                        height: 3.5rem;
+                    }
+                    input:nth-child(2) {
+                        width: calc(30% - 1rem);
+                        height: 3.5rem;
+                    }
+                    button {
+                        border-radius: 0.7rem;
+                        padding: 0.5rem 0;
+                        border: none;
+                        font-size: 1.7rem;
+                        width: calc(20% - 1rem);
+                        color: $text-color;
+                    }
+                }
+                .buttons {
+                    @include flex(row, flex-end, none, none);
+                    button {
+                        padding: 0.5rem 0;
+                        border-radius: 0.7rem;
+                        text-align: center;
+                        width: 12rem;
+                        border: none;
+                        margin-left: 1rem;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+        .note-modal {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 6.7rem;
+            background-color: $secondary-color;
+            padding: 1.5rem;
+            height: 20rem;
+            border-top: $sub-color-3 solid 2px;
+            animation: fadeFromBottom ease 0.3s;
+            .heading {
+                @include flex(row, space-between, center, none);
+                color: $text-color;
+                margin-bottom: 1rem;
+                p {
+                    font-size: 1.7rem;
+                }
+                button {
+                    font-size: 1.5rem;
+                    width: 8rem;
+                    padding: 0.7rem;
+                    color: $text-color;
+                    border: none;
+                }
+            }
+            .content {
+                cursor: pointer;
+                background-color: #363742;
+                border-radius: 0.5rem;
+                height: 12rem;
+                padding: 1rem;
+                color: $text-color;
+                border: transparent solid 2px;
+                transition: all ease 0.3s;
+                h3 {
+                    transition: all ease 0.3s;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 1.6rem;
+                    display: inline-block;
+                    word-wrap: break-word;
+                    overflow-y: scroll;
+                }
+                textarea {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1.6rem;
+                    display: none;
+                    background-color: transparent;
+                    height: 100%;
+                    max-height: 100%;
+                    min-height: 100%;
+                    width: 100%;
+                    max-width: 100%;
+                    min-width: 100%;
+                    outline: none;
+                    border: none;
+                    color: $sub-color-3;
+                    line-height: 1.6rem;
+                }
+                &.editting {
+                    background-color: $secondary-color;
+                    border: $sub-color-3 solid 2px;
+                    h3 {
+                        display: none;    
+                    }
+                    textarea {
+                        display: inline-block;
+                    }
+                }
+                &:hover {
+                    h3 {
+                        color: $sub-color-3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes entrance {
+    from {
+        opacity: 0;
+        transform: translateY(-12rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(12rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

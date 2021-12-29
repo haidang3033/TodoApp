@@ -1,0 +1,293 @@
+@import './mutual.scss';
+
+.body {
+    overflow-y: scroll;
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 72.5rem;
+        margin-bottom: 9rem;
+        .bot-layer {
+            border-radius: 2rem;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            .image {
+                width: 100%;
+                display: flex;
+                position: relative;
+                transition: all ease 1s;
+                &__item {
+                    flex: 1 0 100%;
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .top-layer {
+            @include flex(column, center, center, none);
+            position: absolute;
+            color: $text-color;
+            border-radius: 2rem;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($color: #363742, $alpha: 0.7);
+            .heading {
+                font-weight: 600;
+                font-size: 4rem;
+                margin-bottom: 2rem;
+            }
+            .sub-heading {
+                font-weight: 300;
+                font-size: 2rem;
+                opacity: 0.8;
+                margin-bottom: 3rem;
+            }
+            .contact-btn {
+                @include flex(column, center, center, none);
+                color: $text-color;
+                border: none;
+                width: 20rem;
+                padding: 0.4rem;
+                height: 4.5rem;
+                text-decoration: none
+            }
+        }
+    }
+    .introduction {
+        @include flex(row, space-between, center, none);
+        padding: 5rem;
+        margin-bottom: 10rem;
+        position: relative;
+        .image {
+            width: calc(30% - 2rem);
+            img {
+
+            }
+        }
+        .text {
+            width: calc(70% - 2rem);
+            color: $text-color;
+            h3 {
+                font-weight: 600;
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+            p {
+                font-size: 2rem;
+                line-height: 3.5rem;
+            }
+        }
+        &::after {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            width: 70%;
+            height: 2px;
+            background-color: $text-color;
+            top: 0;
+        }
+        &::before {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            width: 70%;
+            height: 2px;
+            background-color: $text-color;
+            bottom: 0;
+        }
+    }
+    .prestige {
+        background-color: #363742;
+        @include flex(row, space-between, none, none);
+        padding: 3rem;
+        border-radius: 2rem;
+        color: $text-color;
+        margin-bottom: 5rem;
+        .text {
+            h3 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            h2 {
+                line-height: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            ul {
+                margin-left: 2rem;
+                li {
+                    font-size: 1.7rem;
+                    margin-bottom: 2rem;
+                    span {
+                        i {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                    p {
+                        font-weight: 300;
+                        line-height: 2rem;
+                        margin-top: 1rem;
+                        margin-left: 2.6rem;
+                    }
+                }
+            }
+        }
+        .image {
+            @include flex(row, flex-end, center, none);
+            img {
+                height: 50rem;
+            }
+        }
+    }
+    .advantages {
+        color: $text-color;
+        margin-bottom: 5rem;
+        .heading {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .sub-heading {
+            margin: 0 auto;
+            font-weight: 400;
+            opacity: 0.7;
+            width: 60%;
+            text-align: center;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        .list {
+            @include flex(row, space-between, none, wrap);
+            &__item {   
+                text-align: center;
+                width: calc(33.33333% - 5rem);
+                margin-bottom: 3rem;
+                img {
+                    width: 15rem;
+                    margin-bottom: 1.5rem;
+                }
+                h3 {
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    line-height: 1.9rem;
+                    opacity: 0.8;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+    .social {
+        color: $text-color;
+        margin-bottom: 10rem;
+        .heading {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .social-group {
+            @include flex(row, space-evenly, none, none);
+            &__item {
+                cursor: pointer;
+                color: $text-color;
+                text-decoration: none;
+                width: calc(25% - 4rem);
+                padding: 2rem;
+                border-radius: 1.5rem;
+                background-color: #363742;
+                border: transparent solid 2px;
+                text-align: center;
+                opacity: 0.7;
+                transition: all ease 0.3s;
+                .heading {
+                    font-size: 1.7rem;
+                    transition: all ease 0.3s;
+                }
+                .logo {
+                    margin-bottom: 2rem;
+                    transition: all ease 0.3s;
+                    i {
+                        font-size: 10rem;
+                    }
+                }
+                .desc {
+                    font-size: 1.7rem;
+                    line-height: 2.5rem;
+                    margin-bottom: 1rem;
+                    transition: all ease 0.3s;
+                }
+            }
+            &__item:nth-child(1):hover {
+                opacity: 1;
+                border: $sub-color-3 solid 2px;
+                .heading {
+                    color: $sub-color-3;
+                }
+                .logo {
+                    color: $sub-color-3;
+                }
+                .desc {
+                    color: $sub-color-3;
+                }
+            }
+            &__item:nth-child(2):hover {
+                opacity: 1;
+                border: #34a853 solid 2px;
+                .heading {
+                    color: #34a853;
+                }
+                .logo {
+                    color: #34a853;
+                }
+                .desc {
+                    color: #34a853;
+                }
+            }
+            &__item:nth-child(3):hover {
+                opacity: 1;
+                border: #2374e1 solid 2px;
+                .heading {
+                    color: #2374e1;
+                }
+                .logo {
+                    color: #2374e1;
+                }
+                .desc {
+                    color: #2374e1;
+                }
+            }
+            &__item:nth-child(4):hover {
+                opacity: 1;
+                border: #c94747 solid 2px;
+                .heading {
+                    color: #c94747;
+                }
+                .logo {
+                    color: #c94747;
+                }
+                .desc {
+                    color: #c94747;
+                }
+            }
+        }
+    }
+    .footer {
+        opacity: 0.7;
+        font-size: 1.6rem;
+        color: $text-color;
+        text-align: center;
+        transition: all ease 0.3s;
+    }
+    .footer:hover {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,66 @@
+.btn {
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    width: calc(50% - 1.5rem);
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+.btn-remove {
+    background-color: #e45858;
+}
+.btn-remove-2 {
+    background-color: #ff7b21;
+}
+.btn-add-edit {
+    background-color: #a797f3;
+}
+.btn-done {
+    background-color: #53db89;
+}
+.btn-fail {
+    background-color: #e45858;
+}
+.btn-no-condition {
+    background-color: #ffffff;
+}
+
+/* hover btn */
+.btn-remove:hover {
+    background-color: #b94141;
+}
+.btn-remove-2:hover {
+    background-color: #af5417;
+}
+.btn-add-edit:hover {
+    background-color: #877ac5;
+}
+.btn-done:hover {
+    background-color: #40ad6c;
+}
+.btn-fail:hover {
+    background-color: #b94141;
+}
+.btn-no-condition:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+.btn.disabled {
+    cursor: auto!important;
+    color: #2b2c34!important;
+    background-color: #ccc!important;
+}
+.btn.disabled:hover {
+    background-color: #ccc!important;
+    color: #2b2c34!important;
+}
+
+input.disabled {
+    cursor: auto!important;
+    border-color: #ccc!important;
+    color: #ccc!important;
+    user-select: none;
+}

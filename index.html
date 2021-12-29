@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="shortcut icon" type="image/jpg" href="/img/pic-logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Todo App | Home</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__head">
+            <img src="/img/pic-logo.png" alt="" class="logo">
+            <p class="header__title">Introduction & Tutorial</p>
+        </div>
+        <div class="header__body"></div>
+        <div class="header__foot">
+            <div class="count-noti"></div>
+            <i class="far fa-bell normal-icon"></i>
+            <i class="fas fa-bell special-icon"></i>
+            <div class="notification-container">
+                <div class="title">
+                    <p>Notifications</p>
+                    <button><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <div class="noti-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#" class="nav-item active" data-set="0">
+            <i class="far fa-user normal-icon"></i>
+            <i class="fas fa-user special-icon"></i>
+        </a>
+        <a href="/html/timeTable.html" class="nav-item" data-set="1">
+            <i class="far fa-calendar normal-icon"></i>
+            <i class="fas fa-calendar special-icon"></i>
+        </a>
+        <a href="/html/todo.html" class="nav-item" data-set="2">
+            <i class="far fa-list-alt normal-icon"></i>
+            <i class="fas fa-list-alt special-icon"></i>
+        </a>
+        <a href="/html/timer.html" class="nav-item" data-set="3">
+            <i class="far fa-clock normal-icon"></i>
+            <i class="fas fa-clock special-icon"></i>
+        </a>
+        <a href="/html/setting.html" class="nav-item" data-set="4">
+            <i class="far fa-user-circle normal-icon"></i>
+            <i class="fas fa-user-circle special-icon"></i>
+        </a>
+        <a href="/html/about.html" class="nav-item" data-set="5">
+            <i class="far fa-address-book normal-icon"></i>
+            <i class="fas fa-address-book special-icon"></i>
+        </a>
+    </div>
+    <div class="body">
+        <div id="introduction" class="introduction">
+            <div class="introduction__header">
+                <div class="content">
+                    <div class="text">
+                        <h3>Welcome to <span>TodoApp</span> - an ideal website to manage your tasks</h3>
+                        <p>Overall, the website has 3 main features: the Timetable, the Todo List and the Countdown Timer. All of them are very esential for you to manage your daily tasks. Some new features will be added in the future. If you find my website useful, please share my project with others ^^</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="#tutorial" class="tutor btn btn-done">Tutorial</a>
+                        <a href="#footer" class="start btn btn-add-edit">Get Started</a>
+                    </div>
+                </div>
+                <div class="thumb">
+                    <img src="/img/index-thumb.png" alt="">
+                </div>
+            </div>
+            <div class="introduction__text">
+                There's the review of the TodoApp features. They are all very user-friendly
+            </div>
+            <div class="introduction__slider">
+                <div class="slider-wrapper">
+                    <div class="image">
+                        <div class="image__item">
+                            <img src="/img/timeTable-print.png" alt="">
+                        </div>
+                        <div class="image__item">
+                            <img src="/img/todo-print.png" alt="">
+                        </div>
+                        <div class="image__item">
+                            <img src="/img/todo-edit-print.png" alt="">
+                        </div>
+                        <div class="image__item">
+                            <img src="/img/timer-print.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="prev"><i class="fas fa-angle-left"></i></button>
+                    <button class="next"><i class="fas fa-angle-right"></i></button>
+                </div>
+                <div class="slider-nav">
+                    <div class="nav-wrapper">
+                        <div class="bar active" data-index="0"></div>
+                        <div class="bar" data-index="1"></div>
+                        <div class="bar" data-index="2"></div>
+                        <div class="bar" data-index="3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tutorial" class="tutorial">
+            <div class="tutorial__heading">Functions of TodoApp :</div>
+            <div class="tutorial__item">
+                <div class="content">
+                    <h3 style="color: #53db89">Timetable</h3>
+                    <p>You are in urgent demand of having a <span class="inner">schedule</span> ? You want to save and edit your weekly plans? Please choose <span class="inner">Timetable</span>, it will help you so much: </p>
+                    <ul>
+                        <li><i class="fas fa-burn"></i> Add and edit <span class="inner">daily tasks</span></li>
+                        <li><i class="fas fa-burn"></i> Add <span class="inner">description</span> to your tasks</li>
+                    </ul>
+                    <a href="/html/timeTable.html" class="timetable-btn btn btn-done">
+                        <p>Visit</p>
+                        <i class="fas fa-share-square"></i>
+                    </a>
+                </div>
+                <div class="image">
+                    <img src="/img/timeTable.jpg" alt="">
+                </div>
+            </div>
+            <div class="tutorial__item">
+                <div class="content">
+                    <h3 style="color: #a797f3">Todo List</h3>
+                    <p>The Todo List will help you to <span class="inner">manage</span> your <span class="inner">deadlines</span> and use your time <span class="inner">effectively</span> to do them. There're some features of it:</p>
+                    <ul>
+                        <li><i class="fas fa-burn"></i> <span class="inner">Create and custom</span> your tasks</li>
+                        <li><i class="fas fa-burn"></i> Set the <span class="inner">time</span> to your tasks</li>
+                        <li><i class="fas fa-burn"></i> Mark your task <span class="inner">done or failed</span></li>
+                    </ul>
+                    <a href="/html/todo.html" class="todo-btn btn btn-add-edit">
+                        <p>Visit</p>
+                        <i class="fas fa-share-square"></i>
+                    </a>
+                </div>
+                <div class="image">
+                    <img src="/img/todo.jpg" alt="">
+                </div>
+            </div>
+            <div class="tutorial__item">
+                <div class="content">
+                    <h3 style="color: #e66f1f">Countdown Timer</h3>
+                    <p>If you want to <span class="inner">focus on your work</span> in the long time, the <span class="inner">Countdown Timer</span> is the best choice. It contains:</p>
+                    <ul>
+                        <li><i class="fas fa-burn"></i> A countdown <span class="inner">clock</span></li>
+                        <li><i class="fas fa-burn"></i> A <span class="inner">music playlist</span> help you to focus</li>
+                    </ul>
+                    <a href="/html/timer.html" class="timer-btn btn btn-remove-2">
+                        <p>Visit</p>
+                        <i class="fas fa-share-square"></i>
+                    </a>
+                </div>
+                <div class="image">
+                    <img src="/img/timer.jpg" alt="">
+                </div>
+            </div>
+            <div class="tutorial__video">
+                <h3>You can watch our tutorial video: </h3>
+                <div class="video-zone">
+                    <iframe width="853" height="480" src="https://www.youtube.com/embed/3YIr36rLU7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="footer__heading">Visit other pages :</div>
+            <div class="cards-container">
+                <a href="#introduction" class="card">
+                    <div class="card__heading">Home</div>
+                    <div class="card__images">
+                        <img src="/img/home.png" alt="">
+                    </div>
+                </a>
+                <a href="/html/setting.html" class="card">
+                    <div class="card__heading">Setting</div>
+                    <div class="card__images">
+                        <img src="/img/setting.png" alt="">
+                    </div>
+                </a>
+                <a href="/html/about.html" class="card">
+                    <div class="card__heading">About Me</div>
+                    <div class="card__images">
+                        <img src="/img/about.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <div class="end">Have the best experience, my lovely clients !</div>
+        </div>
+    </div>
+    <script type="module" src="/js/index.js"></script>
+</body>
+</html>

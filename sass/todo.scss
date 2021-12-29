@@ -1,0 +1,1020 @@
+@import './mutual.scss';
+.body {
+    @include flex(row, center, none, none);
+    .todo-group {
+        @include flex(column, space-between, none, none);
+        background-color: #363742;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        min-width: 38%;
+        margin-right: 2%;
+        &__header {
+            font-size: 2rem;
+            color: $text-color;
+        }
+        .todo-view {
+            margin: 2rem 0;
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            .todo__item {
+                @include flex(row, space-between, center, none);
+                cursor: pointer;
+                width: calc(100% - 1rem);
+                background-color: $secondary-color;
+                padding: 1.5rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1rem;
+                transition: all ease 0.3s;
+                opacity: 0.7;
+                .text {
+                    @include flex(column, center, none, none);
+                    position: relative;
+                    height: 100%;
+                    width: 20rem;
+                    transition: all ease 0.5s;
+                    .text__header {
+                        h3 {
+                            border: transparent solid 1px;
+                            color: $text-color;
+                            white-space: nowrap;
+                            line-height: 2.5rem;
+                            max-width: 100%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            margin-left: 2rem;
+                            font-size: 2rem;
+                            margin-bottom: 0.3rem;
+                            font-weight: 600;
+                        }
+                        .edit-input {
+                            font-family: "Poppins", sans-serif;
+                            display: none;
+                            background-color: transparent;
+                            border: $secondary-color solid 1px;
+                            color: $secondary-color;
+                            outline: none;
+                            margin-left: 1.6rem;
+                            font-size: 2rem;
+                            line-height: 2.5rem;
+                            border-radius: 0.7rem;
+                            padding: 0 0.4rem;
+                            margin-bottom: 0.3rem;
+                        }
+                    }
+                    p {
+                        color: $text-color;
+                        opacity: 0.7;
+                        margin-left: 2rem;
+                        font-size: 1.5rem;
+                    }
+                }
+                .text:after {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 0.7rem;
+                    background-color: $text-color;
+                    top: 0;
+                    left: 0;
+                    border-radius: 1rem;
+                }
+                .text::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    height: 0;
+                    width: 0.7rem;
+                    background-color: $secondary-color;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(0, -50%);
+                    border-radius: 1rem;
+                    z-index: 1;
+                    transition: all ease 0.5s;
+                }
+                .button {
+                    @include flex(row, none, center, none);
+                    display: none;
+                    height: 90%;
+                    animation: fadeIn ease 0.3s;
+                    button {
+                        padding: 0;
+                        font-size: 2.2rem;
+                        border: none;
+                        width: 4rem;
+                        height: 4rem;
+                        border-radius: 0.5rem;
+                        background-color: transparent;
+                        color: $secondary-color;
+                        &:hover {
+                            color: $text-color;
+                            background-color: #877ac5;
+                        }
+                    }
+                    .remove {
+                        margin-left: 0.3rem;
+                    }
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .todo__item.active {
+                background-color: $primary-color;
+                opacity: 1;
+                .button {
+                    display: flex;
+                }
+                .text {
+                    h3 {
+                        font-weight: 600;
+                        color: $secondary-color;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $secondary-color;
+                        opacity: 1;
+                    }
+                }
+                .text::before {
+                    height: 100%;
+                }
+            }
+            .todo__item.editting {
+                .text {
+                    .text__header {
+                        .edit-input {
+                            display: inline-block;
+                        }
+                        h3 {
+                            display: none;
+                        }
+                    }
+                }
+                .text:after {
+                    background-color: $text-color;
+                }
+                .button {
+                    display: none;
+                }
+            }
+            .no-item {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: $text-color dashed 2px;
+                padding: 4rem;
+                p {
+                    color: $text-color;
+                    font-size: 1.7rem;
+                    margin-bottom: 2rem;
+                }
+                img {
+                    height: 15rem;
+                }
+            }
+        }
+        .todo-button {
+            align-self: center;
+            @include flex(row, space-between, none, none);
+            width: 100%;
+            padding-right: 1.7rem;
+            button {
+                width: calc(50% - 1rem);
+                padding: 0.7rem;
+                color: $text-color;
+            }
+            .todo-add {
+                border: none;
+            }
+            .todo-remove-all {
+                border: none;
+            }
+        }
+    }
+    .todo-list {
+        @include flex(column, none, none, nowrap);
+        background-color: #363742;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        width: 70%;
+        color: $text-color;
+        &__header {
+            font-size: 2rem;
+            max-width: 30rem;
+            min-height: 3rem;
+            line-height: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__subheader {
+            opacity: 0.8;
+            font-size: 1.6rem;
+        }
+        &__nav {
+            position: relative;
+            padding: 1rem 6rem 1rem 3rem;
+            @include flex(row, space-between, center, none);
+            .nav-item {
+                @include flex(row, center, center, none);
+                cursor: pointer;
+                width: calc(33.33333% - 1rem);
+                padding: 0.7rem 2rem;
+                font-size: 1.6rem;
+                font-weight: 600;
+                transition: all ease 0.3s;
+                border-radius: 0.3rem;
+                .special-icon {
+                    display: none;
+                }
+                i {
+                    font-size: 2rem;
+                    margin-right: 0.7rem;
+                }
+                &.active {
+                    .normal-icon {
+                        display: none;
+                    }
+                    .special-icon {
+                        display: inline-block;
+                    }
+                }
+                &:first-child:hover,
+                &:nth-child(2):hover,
+                &:nth-child(3):hover {
+                    background-color: #ffffff60;
+                    color: $secondary-color;
+                }
+                &:first-child.active {
+                    color: $primary-color;
+                    &:hover {
+                        background-color: $primary-color;
+                        color: $secondary-color;
+                    }
+                }
+                &:nth-child(2).active {
+                    color: $sub-color-4;
+                    &:hover {
+                        background-color: $sub-color-4;
+                        color: $secondary-color;
+                    }
+                }
+                &:nth-child(3).active {
+                    color: $sub-color;
+                    &:hover {
+                        background-color: $sub-color;
+                        color: $secondary-color;
+                    }
+                }   
+            }
+            .bottom-line {
+                position: absolute;
+                left: 3rem;
+                bottom: 0.3rem;
+                height: 0.3rem;
+                width: 18rem;
+                background-color: $primary-color;
+                border-radius: 5rem;
+                transition: all ease 0.3s;
+            }
+        }
+        &__nav.disabled {
+            .nav-item {
+                cursor: auto;
+                color: #cccccc;
+                .normal-icon {
+                    display: inline-block;
+                }
+                .special-icon {
+                    display: none;
+                }
+                &:first-child.active {
+                    color: #cccccc
+                }
+                &:nth-child(2).active {
+                    color: #cccccc
+                }
+                &:nth-child(3).active {
+                    color: #cccccc
+                }
+                &:hover,
+                &.active:hover {
+                    background-color: transparent;
+                    color: #cccccc;
+                }
+            }
+            .bottom-line {
+                width: 0!important;
+            }
+        }
+        
+        .works-list {
+            height: 100%;
+            padding: 1rem;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            .no-item {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: $text-color dashed 2px;
+                padding: 4rem;
+                p {
+                    color: $text-color;
+                    font-size: 1.7rem;
+                    margin-bottom: 2rem;
+                }
+                img {
+                    height: 15rem;
+                }
+            }
+            .item {
+                @include flex(row, space-between, center, none);
+                position: relative;
+                cursor: pointer;
+                width: 90%;
+                background-color: $secondary-color;
+                margin-left: 2rem;
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+                transition: all ease 0.3s;
+                opacity: 0.7;
+                padding: 1.2rem 1.4rem;
+                .text {
+                    @include flex(column, center, none, nowrap);
+                    width: 40rem;
+                    h3 {
+                        color: $text-color;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        height: 2.2rem;
+                        line-height: 2.2rem;
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    }
+                    p {
+                        opacity: 0.8;
+                        font-size: 1.6rem;
+                    }
+                }
+                .detail {
+                    background-color: transparent;
+                    display: none;
+                    border-radius: 0.5rem;
+                    color: $text-color;
+                    width: 4rem;
+                    height: 4rem;
+                    &:hover {
+                        background-color: rgba($color: #363742, $alpha: 0.4);
+                    }
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .item.active {
+                background-color: $primary-color;
+                opacity: 1;
+                h3 {
+                    color: $text-color;
+                }
+                p {
+                    color: $text-color;
+                    opacity: 1;
+                }
+                .detail {
+                    display: flex;
+                }
+            }
+            .item.active.done {
+                background-color: $sub-color-4;
+                opacity: 1;
+                h3 {
+                    font-weight: 600;
+                    color: $text-color;
+                }
+                p {
+                    color: $text-color;
+                    opacity: 1;
+                }
+                .detail {
+                    display: flex;
+                    color: $text-color;
+                }
+            }
+            .item.active.fail {
+                background-color: $sub-color;
+                opacity: 1;
+                h3 {
+                    font-weight: 600;
+                    color: $text-color;
+                }
+                p {
+                    color: $text-color;
+                    opacity: 1;
+                }
+                .detail {
+                    display: flex;
+                    color: $text-color;
+                }
+            }
+        }
+        .todo-button {
+            @include flex(row, flex-end, none, none);
+            width: 100%;
+            float: right;
+            margin-top: 2rem;
+            .todo-add {
+                padding: 0.7rem;
+                width: 25%;
+                margin-left: 2.2rem;
+                border: none;
+                color: $text-color;
+            }
+            .todo-remove-all {
+                padding: 0.7rem;
+                width: 25%;
+                border: none;
+                color: $text-color;
+            }
+        }
+    }
+}
+.modal-box {
+    .modal {
+        @include flex(row, center, center, none);
+        margin-top: 6rem;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 6.7rem;
+        position: fixed;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        z-index: 2;
+    }
+    .remove-all-modal {
+        .modal__container {
+            @include flex(column, space-between, space-between, nowrap);
+            padding: 2rem;
+            margin: 5rem;
+            border-radius: 0.5rem;
+            width: 50rem;
+            height: auto;
+            background-color: $secondary-color;
+            animation: zoomOut 0.3s ease;
+            .content {
+                padding: 0 1rem;
+                @include flex(row, space-between, center, nowrap);
+                .modal__image {
+                    width: 7rem;
+                }
+                .modal__text {
+                    color: $text-color;
+                    h3 {
+                        font-size: 2rem;
+                        margin-bottom: 1rem;
+                    }
+                    p {
+                        font-size: 1.7rem;
+                        font-weight: 400;
+                        opacity: 0.8;
+                    }
+                }
+            }
+            .image {
+                margin: 1rem 0;
+                text-align: center;
+                width: 100%;
+                img {
+                    width: 80%;
+                }
+            }
+            .modal__button {
+                @include flex(row, flex-end, center, nowrap);
+                .btn {
+                    border: none;
+                    width: 25%;
+                }
+                .cancel {
+                    padding: 0.7rem;
+                    background-color: $sub-color-3;
+                    color: $text-color;
+                }
+                .cancel:hover {
+                    background-color: #af5417;
+                }
+                .confirm {
+                    padding: 0.7rem;
+                    margin-left: 2rem;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+.item-detail-background {
+    position: fixed;
+    top: 6rem;
+    bottom: 0;
+    left: 6.7rem;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 2;
+    .item-detail {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-left: $primary-color solid 4px;
+        padding: 1.5rem;
+        height: 100%;
+        width: 50rem;
+        background-color: $secondary-color;
+        transform: translateX(65rem);
+        transition: all ease 0.7s;
+        .main-body {
+            height: calc(100% - 7rem);
+            .modal__heading {
+                position: relative;
+                color: $primary-color;
+                font-size: 1.7rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                transition: all ease 0.7s;
+                .edit-btn {
+                    color: $text-color;
+                    position: absolute;
+                    margin-left: 1rem;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    transition: 0.3s ease all;
+                    right: 2rem;
+                    &.hide {
+                        display: none
+                    }
+                }
+            }
+            .modal__header {
+                @include flex(row, flex-start, center, none);
+                margin-bottom: 2rem;
+                border: transparent solid 2px;
+                border-radius: 0.5rem;
+                background-color: #363742;
+                transition: all ease 0.3s;
+                .edit-header {
+                    @include flex(row, space-between, center, none);
+                    cursor: pointer;
+                    width: 100%;    
+                    padding: 1.5rem;
+                    line-height: 2.5rem;
+                    font-size: 1.6rem;
+                    color: $text-color;
+                    max-height: 7rem;
+                    transition: all ease 0.3s;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }   
+                .edit-input {
+                    font-family: 'Poppins', sans-serif;
+                    display: none;                
+                    font-size: 1.6rem;
+                    background-color: transparent;
+                    border: none;
+                    color: $primary-color;
+                    outline: none;                
+                    padding: 1.5rem;
+                    width: 100%;
+                }
+            }
+            .modal__header.editting {
+                border: $primary-color solid 2px;
+                background-color: $secondary-color;
+                .edit-header {
+                    display: none;
+                }
+                .edit-input {
+                    display: flex
+                }
+            }
+            .modal__header:hover {
+                .edit-header {
+                    color: $primary-color;
+                }
+            }
+            .modal__time-status {
+                @include flex(row, space-between, none, none);
+                margin-bottom: 2rem;
+                .time {
+                    @include flex(column, space-between, none, none);
+                    width: calc(40% - 1rem);
+                    .content {
+                        @include flex(row, space-between, center, none);
+                        cursor: pointer;
+                        border: transparent solid 2px;
+                        transition: all ease 0.3s;
+                        &:hover {
+                            h3, .dash {
+                                color: $primary-color;
+                            }
+                        }
+                        h3 {
+                            color: $text-color;
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            transition: all ease 0.3s;
+                        }
+                        .dash {
+                            color: $text-color;
+                            font-size: 2rem;
+                            font-weight: 600;
+                            transition: all ease 0.3s;
+                        }
+                    }
+                }
+                .time.editting {
+                    .content { 
+                        background-color: $secondary-color;
+                        border: $primary-color solid 2px;
+                        h3 {
+                            color: $primary-color;
+                        }
+                        .dash {
+                            color: $primary-color;
+                        }
+                    }
+                }
+                .status {
+                    @include flex(column, space-between, none, none);
+                    width: calc(60% - 1rem);
+                    color: $text-color;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    .content {
+                        @include flex(none, center, center, none);
+                        position: relative;
+                        &:before {
+                            content: 'PENDING';
+                            @include flex(none, center, center, none);
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 1;
+                            border-radius: 0.5rem;
+                            background-color: $primary-color;
+                            transition: all ease 0.3s;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .content {
+                    background-color: #363742;
+                    border-radius: 0.5rem;
+                    padding: 1.5rem 2rem;
+                    height: 100%;
+                }
+            }
+            .modal__description {
+                @include flex (column, space-between, none, none);
+                cursor: pointer;
+                padding: 1.5rem;
+                background-color: #363742;
+                color: $text-color;
+                font-size: 1.6rem;
+                border-radius: 0.5rem;
+                border: transparent 2px solid;
+                transition: all ease 0.3s;
+                .desc {
+                    p {
+                        height: 21rem;
+                        overflow-y: scroll;
+                        line-height: 2rem;
+                        word-wrap: break-word;
+                    }
+                    .edit-input {
+                        line-height: 2rem;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1.6rem;
+                        max-width: 100%;
+                        min-width: 100%;
+                        max-height: 21rem;
+                        min-height: 21rem;
+                        background-color: transparent;
+                        color: $text-color;
+                        border: none;
+                        outline: none;
+                        display: none;
+                    }
+                }
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+            .modal__description.editting {
+                cursor: auto;
+                border: $primary-color solid 2px;
+                background-color: $secondary-color;
+                .desc {
+                    p {
+                        display: none;
+                    }
+                    .edit-input {
+                        display: inline-block;
+                        color: $primary-color;
+                    }
+                }
+                .edit-desc {
+                    display: none;
+                }
+            }
+        }
+        .modal__handle {
+            @include flex(row, center, center, none);
+            position: absolute;
+            padding: 1.5rem 2rem;
+            width: 100%;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            .btn {
+                padding: 0.7rem;
+                width: calc(25% - 5rem);
+                margin: 0 0.8rem;
+                font-size: 2.3rem;
+            }
+            .close {
+                border: none;
+                color: $text-color;
+            }
+            .remove {
+                border: none;
+                color: $text-color;
+            }
+            .done {
+                border: none;
+                color: $text-color;
+            }  
+            .fail {
+                border: none;
+                color: $text-color;
+            }
+        }
+    }
+    .item-detail.show {
+        transform: translateX(0);
+    }
+    .item-detail.done {
+        border-left: $sub-color-4 solid 4px;
+        .modal__heading {
+            color: $sub-color-4;
+        }
+        .modal__header {
+            .edit-header {
+                .edit-btn:hover {
+                    color: $sub-color-4;
+                }
+                &:hover {
+                    color: $sub-color-4;
+                }
+            }
+            .edit-input {
+                border: none;
+                color: $sub-color-4;
+            }
+            &.editting {
+                border: $sub-color-4 solid 2px;
+            }   
+        }
+        .modal__time-status {
+            .time {
+                .content {
+                    &:hover {
+                        h3, .dash {
+                            color: $sub-color-4;
+                        }
+                    }
+                }
+                &.editting {
+                    .content {
+                        border: $sub-color-4 solid 2px;
+                        h3, .dash {
+                            color: $sub-color-4;
+                        }
+                    }
+                }
+            }
+            .status {
+                .content:before {
+                    content: 'RESOLVED';
+                    border-radius: 0.5rem;
+                    background-color: $sub-color-4;
+                }
+            }
+        }
+        .modal__description {
+            &:hover {
+                color: $sub-color-4;
+            }
+        }
+        .modal__description.editting {
+            border: $sub-color-4 solid 2px;
+            .desc {
+                .edit-input {
+                    color: $sub-color-4;
+                }
+            }
+        }
+        .modal__handle {
+            .done {
+                display: none;
+            }
+            .fail {
+                display: none;
+            }
+        }
+    }
+    .item-detail.fail {
+        border-left: $sub-color solid 4px;
+        .modal__heading {
+            color: $sub-color;
+        }
+        .modal__header {
+            .edit-header {
+                .edit-btn:hover {
+                    color: $sub-color;
+                }
+                &:hover {
+                    color: $sub-color;
+                }
+            }
+            .edit-input {
+                border: none;
+                color: $sub-color;
+            }
+            &.editting {
+                border: $sub-color solid 2px;
+            }   
+        }
+        .modal__time-status {
+            .time {
+                .content {
+                    &:hover {
+                        h3, .dash {
+                            color: $sub-color;
+                        }
+                    }
+                }
+                &.editting {
+                    .content {
+                        border: $sub-color solid 2px;
+                        h3, .dash {
+                            color: $sub-color;
+                        }
+                    }
+                }
+            }
+            .status {
+                .content:before {
+                    content: 'FAILED';
+                    border-radius: 0.5rem;
+                    background-color: $sub-color;
+                }
+            }
+        }
+        .modal__description {
+            &:hover {
+                color: $sub-color;
+            }
+        }
+        .modal__description.editting {
+            border: $sub-color solid 2px;
+            .desc {
+                .edit-input {
+                    color: $sub-color;
+                }
+            }
+        }
+        .modal__handle {
+            .done {
+                display: none;
+            }
+            .fail {
+                display: none;
+            }
+        }
+    }
+}
+.sub-modal-box {
+    .time-modal-background {
+        z-index: 3;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include flex(row, flex-end, center, none);
+        .container {
+            top: 20rem;
+            width: 30rem;
+            border-top: $primary-color solid 4px;
+            border-left: $primary-color solid 4px;
+            border-bottom: $primary-color solid 4px;
+            border-radius: 0.5rem 0 0 0.5rem;
+            position: absolute;
+            right: 50rem;
+            padding: 2rem;
+            background-color: $secondary-color;
+            color: $text-color;
+            font-size: 1.7rem;
+            animation: fadeIn ease 0.3s;
+            .item {
+                width: 100%;
+                @include flex(row, space-between, center, none);
+                margin-bottom: 1rem;
+                input {
+                    padding: 1rem;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    outline: none;
+                    border: none;
+                    border-radius: 0.5rem;
+                    width: 15rem;
+                }
+            }
+            .buttons {
+                @include flex(row, space-evenly, center, none);
+                .cancel-btn {
+                    color: $text-color;
+                    border: none;
+                    padding: 0.7rem;
+                    margin-top: 2rem;
+                    outline: none;
+                    width: calc(50% - 2rem);
+                    font-family: 'Poppins', sans-serif;
+                }
+                .submit-btn {
+                    padding: 0;
+                    height: 4rem;
+                    margin-top: 2rem;
+                    outline: none;
+                    border: none;
+                    color: $text-color;
+                    width: calc(50% - 2rem);
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+        }
+        .container.done {
+            border-color: $sub-color-4;
+        }
+        .container.fail {
+            border-color: $sub-color;
+        }
+    }
+}
+
+// keyframe
+@keyframes lineFullWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        transform: translateX(50rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes zoomOut {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

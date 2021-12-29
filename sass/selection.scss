@@ -1,0 +1,13 @@
+// Selection
+::selection {
+    background: $primary-color; 
+    color: $secondary-color;
+}
+::-moz-selection {
+    background: $primary-color; 
+    color: $secondary-color;
+}
+::-webkit-selection {
+    background: $primary-color; 
+    color: $secondary-color;
+}

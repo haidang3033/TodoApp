@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/timeTable.css">
+    <link rel="shortcut icon" type="image/jpg" href="/img/pic-logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Todo App | Home</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__head">
+            <img src="/img/pic-logo.png" alt="" class="logo">
+            <p class="header__title">Timetable</p>
+        </div>
+        <div class="header__foot">
+            <div class="count-noti"></div>
+            <i class="far fa-bell normal-icon"></i>
+            <i class="fas fa-bell special-icon"></i>
+            <div class="notification-container">
+                <div class="title">
+                    <p>Notifications</p>
+                    <button><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <div class="noti-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="/index.html" class="nav-item" data-set="0">
+            <i class="far fa-user normal-icon"></i>
+            <i class="fas fa-user special-icon"></i>
+        </a>
+        <a href="#" class="nav-item active" data-set="1">
+            <i class="far fa-calendar normal-icon"></i>
+            <i class="fas fa-calendar special-icon"></i>
+        </a>
+        <a href="/html/todo.html" class="nav-item" data-set="2">
+            <i class="far fa-list-alt normal-icon"></i>
+            <i class="fas fa-list-alt special-icon"></i>
+        </a>
+        <a href="/html/timer.html" class="nav-item" data-set="3">
+            <i class="far fa-clock normal-icon"></i>
+            <i class="fas fa-clock special-icon"></i>
+        </a>
+        <a href="/html/setting.html" class="nav-item" data-set="4">
+            <i class="far fa-user-circle normal-icon"></i>
+            <i class="fas fa-user-circle special-icon"></i>
+        </a>
+        <a href="/html/about.html" class="nav-item" data-set="5">
+            <i class="far fa-address-book normal-icon"></i>
+            <i class="fas fa-address-book special-icon"></i>
+        </a>
+    </div>
+    <div class="body">
+        <div class="title">
+            <div class="date"></div>
+            <div class="buttons">
+                <button class="note btn btn-add-edit"><i class="fas fa-pencil-ruler"></i></button>
+                <button class="clear btn btn-remove"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+        <div class="schedule">
+            <div class="row head">
+                <div class="column">Mon</div>
+                <div class="column">Tue</div>
+                <div class="column">Wed</div>
+                <div class="column">Thu</div>
+                <div class="column">Fri</div>
+                <div class="column">Sat</div>
+                <div class="column">Sun</div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+            <div class="row content">
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><span>0</span> tasks</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-box"></div>
+    </div>
+    <script type="module" src="/js/timeTable.js"></script>
+</body>
+</html>
