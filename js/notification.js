@@ -14,7 +14,7 @@ const notification = {
             if (calendarStorage[currentDate - 1].task.length > 0) {
                 storageNotification.push({
                     name: `You have ${calendarStorage[currentDate - 1].task.length} pending tasks today - ${currentDate}/${currentMonth}/${currentYear}. Manage your time effectively to finish them ^^!`,
-                    link: '/html/timeTable.html',
+                    link: './html/timeTable.html',
                 })
                 localStorage.setItem('notification', JSON.stringify(storageNotification))
             }
@@ -73,7 +73,7 @@ const notification = {
         const notiList = $('.noti-list')
         const htmls = storageNotification.map((noti, index) => {
             return `<div class="item" data-index="${index}">
-                        <img class="image" src="/img/pic-logo.png" alt="">
+                        <img class="image" src="../img/pic-logo.png" alt="">
                         <div class="text">
                             <div class="content">${noti.name}</div>
                         </div>
@@ -88,7 +88,7 @@ const notification = {
             notiList.innerHTML = 
                 `<div class="no-item">
                     <p>You don't have any notifications</p>
-                    <img src="/img/pic-logo.png" alt="">
+                    <img src="../img/pic-logo.png" alt="">
                 </div>`
         }
 
