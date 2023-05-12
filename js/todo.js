@@ -153,14 +153,14 @@ const app = {
             `<div class="modal remove-all-modal">
                 <div class="modal__container">
                     <div class="content">
-                        <img class="modal__image" src="/img/pic-logo.png" alt="">
+                        <img class="modal__image" src="../img/pic-logo.png" alt="">
                         <div class="modal__text">
                             <h3>Are you sure to remove all items ?</h3>
                             <p>They will be permanently removed</p>
                         </div>
                     </div>
                     <div class="image">
-                        <img src="/img/img1.png" alt="">
+                        <img src="../img/img1.png" alt="">
                     </div>
                     <div class="modal__button">
                         <button class="cancel btn btn-remove-2">Cancel</button>
@@ -635,7 +635,7 @@ const app = {
         worksList.innerHTML =
             `<div class="no-item">
                 <p>Please choose a group on the left column !</p>
-                <img src="/img/pic-logo.png" alt="">
+                <img src="../img/pic-logo.png" alt="">
             </div>`
         this.renderGroup()
         this.renderList()
@@ -662,14 +662,14 @@ const app = {
             `<div class="modal remove-all-modal">
                 <div class="modal__container">
                     <div class="content">
-                        <img class="modal__image" src="/img/pic-logo.png" alt="">
+                        <img class="modal__image" src="../img/pic-logo.png" alt="">
                         <div class="modal__text">
                             <h3>Are you sure to remove all items ?</h3>
                             <p>They will be permanently removed</p>
                         </div>
                     </div>
                     <div class="image">
-                        <img src="/img/img1.png" alt="">
+                        <img src="../img/img1.png" alt="">
                     </div>
                     <div class="modal__button">
                         <button class="cancel btn btn-remove">Cancel</button>
@@ -730,7 +730,7 @@ const app = {
             todoView.innerHTML =
                 `<div class="no-item">
                     <p>You haven't had any group yet !</p>
-                    <img src="/img/pic-logo.png" alt="">
+                    <img src="../img/pic-logo.png" alt="">
                 </div>`
             this.disableButton('.todo-group .todo-remove-all')
         }
@@ -746,7 +746,7 @@ const app = {
             worksList.innerHTML =
                 `<div class="no-item">
                 <p>Please choose a group on the left column !</p>
-                <img src="/img/pic-logo.png" alt="">
+                <img src="../img/pic-logo.png" alt="">
             </div>`
             this.disableButton('.todo-list .todo-remove-all')
             this.disableButton('.todo-list .todo-add')
@@ -773,7 +773,7 @@ const app = {
                 worksList.innerHTML =
                     `<div class="no-item">
                         <p>You haven't had any task in that tab !</p>
-                        <img src="/img/pic-logo.png" alt="">
+                        <img src="../img/pic-logo.png" alt="">
                     </div>`
                 this.disableButton('.todo-list .todo-remove-all')
             }

@@ -46,19 +46,19 @@ const app = {
             }
     
             const htmls = 
-                `<a href="/html/timeTable.html" class="item">
+                `<a href="./timeTable.html" class="item">
                     <div class="heading">Timetable</div>
                     <div class="task-count">${countTimeTableTask}</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Pending Tasks</div>
                     <div class="task-count">${countPendingTask}</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Done Tasks</div>
                     <div class="task-count">${countDoneTask}</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Failed Tasks</div>
                     <div class="task-count">${countFailedTask}</div>
                 </a>`
@@ -66,19 +66,19 @@ const app = {
         }
         else {
             container.innerHTML = 
-                `<a href="/html/timeTable.html" class="item">
+                `<a href="./timeTable.html" class="item">
                     <div class="heading">Timetable</div>
                     <div class="task-count">0</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Pending Tasks</div>
                     <div class="task-count">0</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Done Tasks</div>
                     <div class="task-count">0</div>
                 </a>
-                <a href="/html/todo.html" class="item">
+                <a href="./todo.html" class="item">
                     <div class="heading">Failed Tasks</div>
                     <div class="task-count">0</div>
                 </a>`
